@@ -16,7 +16,7 @@ class Router
         $controller = self::$routeList[$url];
 
         if (!isset($controller) || !method_exists($controller[0], $controller[1])) {
-            die('BAD ROUTER ERROR');
+            die('BAD ROUTE ERROR');
         }
 
         call_user_func($controller);

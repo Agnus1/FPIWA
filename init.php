@@ -3,7 +3,9 @@
 require_once 'vendor/autoload.php';
 
 use Igork\Fpiwa\Router\Router;
+use Igork\Fpiwa\Initial\Executor;
+use Igork\Fpiwa\Globals\Collector;
 
-require_once $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Routing' . DIRECTORY_SEPARATOR . 'config.php';
-//Router::show($_SERVER['REQUEST_URI']);
-echo 'test';
+Executor::execute();
+//Router::registerRoute('/', [\Igork\Fpiwa\Test::class, 'test']);
+Router::show(Collector::getRequestUrl());
