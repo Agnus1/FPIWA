@@ -1,0 +1,17 @@
+{
+    "name": "igork/fpiwa",
+    "autoload": {
+        "psr-4": {
+            "Igork\\Fpiwa\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Igor Kim",
+            "email": "igorkim200218@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "symfony/var-dumper": "^6.3"
+    }
+}
