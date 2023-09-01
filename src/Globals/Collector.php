@@ -8,7 +8,13 @@ class Collector
         return $_SERVER['DOCUMENT_ROOT'];
     }
 
-    public static function getRequestUrl(): string {
-        return $_SERVER['REQUEST_URI'];
+    public static function getRequestUrl(bool $forceEndSlash = true): string {
+        $result = $_SERVER['REQUEST_URI'];
+
+        if ($forceEndSlash && !str_ends_with($result, '/')) {
+            $result .= '/';
+        }
+
+        return $result;
     }
 }

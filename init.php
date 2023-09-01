@@ -5,7 +5,10 @@ require_once 'vendor/autoload.php';
 use Igork\Fpiwa\Router\Router;
 use Igork\Fpiwa\Initial\Executor;
 use Igork\Fpiwa\Globals\Collector;
+use Igork\Fpiwa\Router\DynamicCaller;
 
 Executor::execute();
-//Router::registerRoute('/', [\Igork\Fpiwa\Test::class, 'test']);
-Router::show(Collector::getRequestUrl());
+
+$controller = Router::getController(Collector::getRequestUrl());
+
+DynamicCaller::call($controller);
